@@ -79,6 +79,19 @@
   };
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
+    bind = [
+      "SUPER, Q, exec, kitty"
+    ];
+    input = {
+      kb_layout = "es";
+      repeat_delay = 212;
+      repeat_rate = 30;
+      follow_mouse = 1;
+      touchpad = {natural_scroll = false;};
+
+          sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+          force_no_accel = true;
+        };
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
