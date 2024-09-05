@@ -23,7 +23,11 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-
+  fileSystems."/mnt/MyLibrary" = {
+    device = "/dev/disk/by-uuid/225E85335E850131";
+    fsType = "ntfs";
+    options = ["users" "nofail" "x-gvfs-show" ];
+  };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

@@ -84,6 +84,7 @@
     git
     vscode
     kitty
+    btop
   ];
   programs.hyprland = {
     enable = true;

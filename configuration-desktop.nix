@@ -84,6 +84,15 @@
     git
     vscode
     kitty
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    btop
+    htop
+    gparted
+    dolphin
+    lutris
+    spotify
   ];
   programs.steam = {
     enable = true;
