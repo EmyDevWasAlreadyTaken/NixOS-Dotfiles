@@ -18,21 +18,29 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      surface = lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; }; # hyprland stuff?
         modules = [ ./configuration.nix
 		    ./hardware-configuration.nix
 		    ];
 
-        };
       };
-      homeConfigurations = {
-        emydev = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
-	modules = [ ./home.nix ];
-	};
+      desktop = lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; }; # hyprland stuff?
+        modules = [ ./configuration.nix
+		    ./hardware-configuration-desktop1.nix
+		    ];
+
       };
     };
-
+    homeConfigurations = {
+      emydev = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home.nix ];
+      };
+    };
+   
+  };
 }

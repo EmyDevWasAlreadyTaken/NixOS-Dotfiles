@@ -45,7 +45,7 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "es";
+    layout = "en";
     variant = "";
   };
   console.keyMap = "es";
@@ -81,6 +81,9 @@
     wget
     fastfetch
     pavucontrol
+    git
+    vscode
+    kitty
   ];
   programs.hyprland = {
     enable = true;
