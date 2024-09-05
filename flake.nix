@@ -9,6 +9,11 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     #hyprland.url = "git+https://github.com/hyprw/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
@@ -30,7 +35,7 @@
         inherit system;
         specialArgs = { inherit inputs; }; # hyprland stuff?
         modules = [ ./configuration-desktop.nix
-		    ./hardware-configuration-desktop1.nix
+		                ./hardware-configuration-desktop1.nix
 		    ];
 
       };
