@@ -48,7 +48,7 @@
     layout = "en";
     variant = "";
   };
-  console.keyMap = "es";
+  console.keyMap = "en";
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.emydev = {
     isNormalUser = true;
