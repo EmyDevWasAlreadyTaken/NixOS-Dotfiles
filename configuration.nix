@@ -85,6 +85,14 @@
     vscode
     kitty
     btop
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    htop
+    gparted
+    dolphin
+    lutris
+    spotify
   ];
   programs.hyprland = {
     enable = true;
