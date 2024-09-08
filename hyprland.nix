@@ -72,7 +72,8 @@
       "$mainMod SHIFT, h, resizeactive, -30 0"
       "$mainMod SHIFT, k, resizeactive, 0 -30"
       "$mainMod SHIFT, j, resizeactive, 0 30"
-        ];
+      "$mainMod CTRL, F, fullscreen"  
+      ];
     input = {
       kb_layout = "es";
       repeat_delay = 212;
@@ -168,6 +169,7 @@
       "float,class:^(nm-applet)$"
       "float,class:^(nm-connection-editor)$"
       "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
+     
     ];     
   };
 

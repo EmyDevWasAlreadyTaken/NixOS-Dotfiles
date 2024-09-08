@@ -14,9 +14,10 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager,  nixos-hardware, ... } @ inputs:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -27,7 +28,8 @@
         inherit system;
         specialArgs = { inherit inputs; }; # hyprland stuff?
         modules = [ ./configuration.nix
-		    ./hardware-configuration.nix
+		                ./hardware-configuration.nix
+                    nixos-hardware.nixosModules.microsoft-surface-pro-intel
 		    ];
 
       };

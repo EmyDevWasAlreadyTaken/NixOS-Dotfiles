@@ -71,12 +71,12 @@
   };
 
   programs.firefox.enable = true;
+  virtualisation.waydroid.enable = 1==1; 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  virtualization.waydroid,enable 
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
