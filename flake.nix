@@ -15,6 +15,10 @@
       inputs.hyprland.follows = "hyprland";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+      hyprgrass = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
   };
 
   outputs = { self, nixpkgs, home-manager,  nixos-hardware, ... } @ inputs:
@@ -45,6 +49,7 @@
     homeConfigurations = {
       laptop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit inputs; }; 
         modules = [ ./home.nix ];
       };
       desktop = home-manager.lib.homeManagerConfiguration {

@@ -1,8 +1,12 @@
-{ config, pkgs, username, terminal, ... }:
+{ config, pkgs, username, terminal, inputs, ... }:
 {
 
   wayland.windowManager.hyprland.enable = true;
-
+  wayland.windowManager.hyprland = {
+   plugins = [
+      inputs.hyprgrass.packages.${pkgs.system}.default
+   ];
+};
   wayland.windowManager.hyprland.settings = {
  "$mainMod" = "SUPER";
     bind = [
