@@ -17,6 +17,8 @@
       ",XF86MonBrightnessDown,exec,light -U 20"
       ",XF86MonBrightnessUp,exec,light -A 20"
       ",XF86AudioMute,exec,pamixer -t"
+      "$mainMod, O,exec,light -U 20"
+      "$mainMod, P,exec,light -A 20"
       ",XF86AudioLowerVolume,exec,pamixer -d 2"
       ",XF86AudioRaiseVolume,exec,pamixer -i 2"
       ",XF86AudioPlay,exec,playerctl play-pause"
@@ -72,7 +74,7 @@
       "$mainMod SHIFT, j, resizeactive, 0 30"
         ];
     input = {
-      kb_layout = "";
+      kb_layout = "es";
       repeat_delay = 212;
       repeat_rate = 30;
       follow_mouse = 1;

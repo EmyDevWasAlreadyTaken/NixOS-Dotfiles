@@ -45,7 +45,7 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "en";
+    layout = "es";
     variant = "";
   };
   console.keyMap = "es";
@@ -76,6 +76,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  virtualization.waydroid,enable 
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
