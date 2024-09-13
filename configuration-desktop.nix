@@ -93,6 +93,9 @@
     dolphin
     lutris
     spotify
+    unityhub
+    qemu
+    dotnetCorePackages.sdk_9_0
   ];
   programs.steam = {
     enable = true;

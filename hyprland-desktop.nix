@@ -35,6 +35,11 @@
       # Switch workspaces relative to the active workspace with mainMod + CTRL + [←→]
       "$mainMod CTRL, right, workspace, r+1"
       "$mainMod CTRL, left, workspace, r-1"
+      # Move active window to a relative workspace with mainMod + CTRL + ALT + [←→]
+      "$mainMod CTRL ALT, right, movetoworkspace, r+1"
+      "$mainMod CTRL ALT, left, movetoworkspace, r-1"
+      "$mainMod CTRL ALT, mouse_down, movetoworkspace, r+1"
+      "$mainMod CTRL ALT, mouse_up, movetoworkspace, r-1"
       # move to the first empty workspace instantly with mainMod + CTRL + [↓]
       "$mainMod CTRL, down, workspace, empty"
       # Move focus with mainMod + HJKL keys
@@ -42,10 +47,6 @@
       "$mainMod, l, movefocus, r"
       "$mainMod, k, movefocus, u"
       "$mainMod, j, movefocus, d"
-
-      # Move active window to a relative workspace with mainMod + CTRL + ALT + [←→]
-      "$mainMod CTRL ALT, right, movetoworkspace, r+1"
-      "$mainMod CTRL ALT, left, movetoworkspace, r-1"
       # Move active window around current workspace with mainMod + SHIFT + CTRL [←→↑↓]
       "$mainMod SHIFT $CONTROL, left, movewindow, l"
       "$mainMod SHIFT $CONTROL, right, movewindow, r"
