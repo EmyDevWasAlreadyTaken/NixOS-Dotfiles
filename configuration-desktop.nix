@@ -96,6 +96,7 @@
     unityhub
     qemu
     dotnetCorePackages.sdk_9_0
+    dotnetCorePackages.runtime_9_0
   ];
   programs.steam = {
     enable = true;
