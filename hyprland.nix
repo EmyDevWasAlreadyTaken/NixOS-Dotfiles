@@ -4,7 +4,7 @@
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland = {
    plugins = [
-      inputs.hyprgrass.packages.${pkgs.system}.default
+     # inputs.hyprgrass.packages.${pkgs.system}.default
    ];
 };
   wayland.windowManager.hyprland.settings = {
@@ -63,7 +63,10 @@
       "$mainMod SHIFT $CONTROL, L, movewindow, r"
       "$mainMod SHIFT $CONTROL, K, movewindow, u"
       "$mainMod SHIFT $CONTROL, J, movewindow, d"
-      
+      "$mainMod SHIFT, z, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 1"
+      "$mainMod SHIFT, x, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 0"
+      "$mainMod SHIFT, z, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 1"
+      "$mainMod SHIFT, x, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 0"
     ];
     binde = [
       # Resize windows
@@ -176,5 +179,8 @@
      
     ];     
   };
+   wayland.windowManager.hyprland.extraConfig = ''
+ input:touchdevice:transform = 0
+  '';
 
 }
