@@ -70,8 +70,18 @@
     };
   };
 
-  programs.firefox.enable = true;
-  virtualisation.waydroid.enable = 1==1; 
+  programs.firefox.enable = true; 
+  virtualisation = {
+    waydroid.enable = 1==1;
+    libvirtd = {
+    enable = true;
+    qemu = {
+      swtpm.enable = true;
+      ovmf.enable = true;
+      ovmf.packages = [ pkgs.OVMFFull.fd ];
+    };
+    spiceUSBRedirection.enable = true;
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -94,6 +104,8 @@
     dolphin
     lutris
     spotify
+    dotnetCorePackages.runtime_9_0
+    dotnetCorePackages.sdk_6_0_1xx
   ];
   programs.hyprland = {
     enable = true;

@@ -8,6 +8,19 @@
   imports = [
   ./hyprland-desktop.nix
   ];
+  programs.bash.enable = true;
+  programs.zsh.enable = true;
+  programs.fish.enable = true;
+  home.sessionPath = [
+    "/home/emydev/.dotnet/tools"
+    "/home/emydev/.dotnet/"
+  ];
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
+  };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -23,6 +36,8 @@
   home.packages = with pkgs;[
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
+    protonup-qt
+    unityhub
     vscode
     vlc
     discord
@@ -50,6 +65,8 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+    obs-studio
+    gcalcli
       # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

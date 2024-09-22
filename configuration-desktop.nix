@@ -53,10 +53,12 @@
   users.users.emydev = {
     isNormalUser = true;
     description = "EmyDev";
-    extraGroups = [ "netwokmanager" "wheel" ];
+    extraGroups = [ "netwokmanager" "wheel" "libvirtd"];
     packages = with pkgs; [ ];
   };
-  
+  environment.sessionVariables = {
+  DOTNET_ROOT = "${pkgs.dotnet-sdk}";
+  };
   services = {
     pipewire = {
       enable = true;
@@ -76,6 +78,20 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  programs.dconf.enable = true;
+  programs.virt-manager.enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
+    };
+          spiceUSBRedirection.enable = true;
+  };
+  
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -93,10 +109,18 @@
     dolphin
     lutris
     spotify
-    unityhub
     qemu
+    virt-viewer
+    spice spice-gtk
+    spice-protocol
+    win-virtio
+    win-spice
+    adwaita-icon-theme
     dotnetCorePackages.sdk_9_0
     dotnetCorePackages.runtime_9_0
+    dotnetCorePackages.sdk_6_0_1xx
+    dotnet-runtime
+    blender
   ];
   programs.steam = {
     enable = true;

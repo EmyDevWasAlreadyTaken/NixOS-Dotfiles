@@ -70,7 +70,11 @@
       "$mainMod SHIFT, h, resizeactive, -30 0"
       "$mainMod SHIFT, k, resizeactive, 0 -30"
       "$mainMod SHIFT, j, resizeactive, 0 30"
-        ];
+    ];
+    bindm = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
+    ];
     input = {
       kb_layout = "";
       repeat_delay = 212;
