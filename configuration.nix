@@ -53,7 +53,7 @@
   users.users.emydev = {
     isNormalUser = true;
     description = "EmyDev";
-    extraGroups = [ "netwokmanager" "wheel" ];
+    extraGroups = [ "netwokmanager" "wheel" "libvirtd"];
     packages = with pkgs; [ ];
   };
   
@@ -69,19 +69,21 @@
       jack.enable = true;
     };
   };
-
-  programs.firefox.enable = true; 
+  programs.dconf.enable = true;
+  programs.virt-manager.enable = true;
   virtualisation = {
     waydroid.enable = 1==1;
     libvirtd = {
-    enable = true;
-    qemu = {
-      swtpm.enable = true;
-      ovmf.enable = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
     };
-    spiceUSBRedirection.enable = true;
+          spiceUSBRedirection.enable = true;
   };
+  programs.firefox.enable = true; 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -106,6 +108,15 @@
     spotify
     dotnetCorePackages.runtime_9_0
     dotnetCorePackages.sdk_6_0_1xx
+    spice spice-gtk
+    spice-protocol
+    win-virtio
+    win-spice
+    adwaita-icon-theme
+    qemu
+    virt-viewer
+    python39Full
+    gcc
   ];
   programs.hyprland = {
     enable = true;
