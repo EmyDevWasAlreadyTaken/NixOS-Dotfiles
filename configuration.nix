@@ -117,6 +117,7 @@
     virt-viewer
     python39Full
     gcc
+    gnumake
   ];
   programs.hyprland = {
     enable = true;
