@@ -121,6 +121,15 @@
     dotnetCorePackages.sdk_6_0_1xx
     dotnet-runtime
     blender
+    gcc
+  ];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+
+    # Add any missing dynamic libraries for unpackaged programs
+
+    # here, NOT in environment.systemPackages
+
   ];
   programs.steam = {
     enable = true;

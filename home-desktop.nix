@@ -14,6 +14,7 @@
   home.sessionPath = [
     "/home/emydev/.dotnet/tools"
     "/home/emydev/.dotnet/"
+    "/home/emydev/.config/Code/User/globalStorage/ms-dotnettools.vscode-dotnet-runtime/.dotnet/8.0.8~x64~aspnetcore/dotnet:"
   ];
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
@@ -67,6 +68,7 @@
     xdg-desktop-portal-gtk
     obs-studio
     gcalcli
+    vesktop
       # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
