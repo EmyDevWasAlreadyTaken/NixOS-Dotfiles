@@ -118,6 +118,7 @@
     python39Full
     gcc
     gnumake
+    google-chrome
   ];
   programs.hyprland = {
     enable = true;

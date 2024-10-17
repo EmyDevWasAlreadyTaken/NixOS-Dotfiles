@@ -65,7 +65,7 @@
       "$mainMod SHIFT $CONTROL, J, movewindow, d"
       "$mainMod SHIFT, z, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 1"
       "$mainMod SHIFT, x, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 0"
-      "$mainMod SHIFT, z, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 1"
+      "$mainMod SHIFT, c, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 3"
       "$mainMod SHIFT, x, exec, hyprctl keyword monitor eDP-1,auto,auto, 2, transform, 0"
     ];
     binde = [
@@ -180,7 +180,7 @@
     ];     
   };
    wayland.windowManager.hyprland.extraConfig = ''
- input:touchdevice:transform = 0
+ input:touchdevice:transform = 3
   '';
 
 }
