@@ -120,6 +120,7 @@
     gnumake
     google-chrome
     networkmanagerapplet
+    font-awesome
   ];
   programs.hyprland = {
     enable = true;

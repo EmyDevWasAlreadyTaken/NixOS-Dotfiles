@@ -2,5 +2,8 @@
 {
     programs.waybar = {
         enable = true;
-    }
+    };
+    programs.eww = {
+        enable = true;
+    };
 }
