@@ -181,6 +181,8 @@
   };
    wayland.windowManager.hyprland.extraConfig = ''
  input:touchdevice:transform = 3
+ exec-once = waybar
+
   '';
 
 }

@@ -174,5 +174,6 @@
   };
   wayland.windowManager.hyprland.extraConfig = ''
   monitor =, 1920x1080@144, 0x0, 1
+  exec-once = waybar
   '';
 }

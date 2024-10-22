@@ -119,6 +119,7 @@
     gcc
     gnumake
     google-chrome
+    networkmanagerapplet
   ];
   programs.hyprland = {
     enable = true;
