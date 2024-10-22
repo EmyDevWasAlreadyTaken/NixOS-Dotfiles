@@ -86,9 +86,18 @@
   programs.firefox.enable = true; 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  fonts.packages = with pkgs; [
+    font-awesome
+  ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+    programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
